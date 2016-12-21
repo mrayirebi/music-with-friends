@@ -1,0 +1,8 @@
+<header id="header">
+    <h1>Music Mix</h1>
+    <p>A music game to play with all your friends!</p>
+</header>
+<form id="signup-form" action="javascript:void(0);">
+    <input #playerName name="name" placeholder="What's your name?" type="text">
+    <button (click)="enterGame(playerName.value)" style="height: 3.75em;">Enter</button>
+</form>
