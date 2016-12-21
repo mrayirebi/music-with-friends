@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/*.js.map": true,
+        "**/*.component.js": true,
+        "**/*.component.spec.js": true,
+        "**/*.component.spec.ts": true,
+        "**/*.module.js": true,
+        "**/main.js": true
+    }
+}
