@@ -17,14 +17,18 @@ export class Player {
     // id - Unique id of the player for this game
     // name - The user supplied name of the player
     // score - The current score of the player (default to 0)
-    constructor(public id: string, public name: string, public score = 0) {}
+    constructor(public id: number, public name: string, public score = 0) {}
 }
 
 export class GameInfo {
     // players - The players in the game
     // gameSong - The song all players have to guess
     // guessList - A list of options for the name of the current song
-    constructor(public id: number, public players: Player[], public gameSong: GameSong, public guessList: SongGuessItem[]) {}
+    constructor(
+        public id: number,
+        public players: Player[],
+        public gameSong: GameSong,
+        public guessList: SongGuessItem[]) {}
 
     private shuffleArray<T>(array: T[]) {
         for (var i = array.length - 1; i > 0; i--) {
