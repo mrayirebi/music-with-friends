@@ -1,0 +1,74 @@
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+
+.flexcontainer li {
+   flex-basis: 0;
+   flex-grow: 1;
+}
+
+#choose-from {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+ul.song-choice-list, ul.player-list {
+    list-style: none;
+}
+
+ul.song-choice-list li {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 1em 0;
+}
+
+ul.song-choice-list li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+ul.song-choice-list li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ul.player-list li {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 1em;
+}
+
+ul.player-list li:nth-child(1n) {
+    background: rgba(255, 50, 50, 0.7);
+}
+
+ul.player-list li:nth-child(2n) {
+    background: rgba(50, 175, 255, 0.7);
+}
+
+ul.player-list li:nth-child(3n) {
+    background: rgba(50, 255, 96, 0.7);
+}
+
+ul.player-list li:nth-child(4n) {
+    background: rgba(255, 253, 50, 0.7);
+}
+
+ul.player-list li:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+ul.player-list li span {
+    display: block;
+    text-align: center;
+}

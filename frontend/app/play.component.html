@@ -1,13 +1,17 @@
- <!--TODO Add the list of players in a good UI format with their scores.-->
- <h3>Players:</h3>
- <tr *ngFor="let player of gameInfo.players">
-  <td>{{player.id}} {{player.name}} - Score = {{player.score}}</td>
-</tr>
- <!--TODO Improve UI for choosing the song -->
- <h3>Choose from:</h3>
- <tr *ngFor="let guessItem of gameInfo.getShuffledSongList()">
-  <td>{{guessItem.name}} - {{guessItem.artist}}</td>
-</tr>
+ <p id="choose-from">--- pick a choice below ---</p>
+ <ul class="song-choice-list">
+  <li *ngFor="let guessItem of gameInfo.getShuffledSongList()">{{guessItem.name}} - {{guessItem.artist}}</li>
+</ul>
+ <p id="choose-from">--- {{gameInfo.players.length}} players ---</p>
+ <ul class="player-list flexcontainer">
+  <li *ngFor="let player of gameInfo.players">
+    <div>
+      <span class="player-name">{{player.name}}</span>
+      <span>-</span>
+      <span>{{player.score}}</span>
+    </div>
+  </li>
+</ul>
  <audio autoplay [currentTime]="gameInfo.gameSong.startTime">
   <source [src]="gameInfo.gameSong.url" type="audio/mpeg">
   Your browser does not support the audio tag.

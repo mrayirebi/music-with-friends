@@ -22,6 +22,7 @@ export class PlayComponent {
         // (+) converts string 'id' to a number
         let id = +this.route.snapshot.params['id'];
         this.gameInfo = this.apiService.getGameInfo(id);
+        // TODO Should poll for getting the game info
         // TODO Add 3 sec delay before the song plays
     }
 
