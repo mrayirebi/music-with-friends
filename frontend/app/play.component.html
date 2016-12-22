@@ -1,5 +1,15 @@
 <h1>Play Component</h1>
- <audio autoplay>
-  <source [src]="songUrl" type="audio/mpeg">
+ <!--TODO Add the list of players in a good UI format with their scores.-->
+ <h3>Players:</h3>
+ <tr *ngFor="let player of gameInfo.players">
+  <td>{{player.id}} {{player.name}} - Score = {{player.score}}</td>
+</tr>
+ <!--TODO Improve UI for choosing the song -->
+ <h3>Choose from:</h3>
+ <tr *ngFor="let guessItem of gameInfo.getSongList()">
+  <td>{{guessItem.name}} - {{guessItem.artist}}</td>
+</tr>
+ <audio autoplay [currentTime]="gameInfo.gameSong.startTime">
+  <source [src]="gameInfo.gameSong.url" type="audio/mpeg">
   Your browser does not support the audio tag.
 </audio> 
