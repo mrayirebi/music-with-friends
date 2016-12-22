@@ -6,7 +6,7 @@
 </tr>
  <!--TODO Improve UI for choosing the song -->
  <h3>Choose from:</h3>
- <tr *ngFor="let guessItem of gameInfo.getSongList()">
+ <tr *ngFor="let guessItem of gameInfo.getShuffledSongList()">
   <td>{{guessItem.name}} - {{guessItem.artist}}</td>
 </tr>
  <audio autoplay [currentTime]="gameInfo.gameSong.startTime">
