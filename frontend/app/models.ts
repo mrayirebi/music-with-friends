@@ -21,6 +21,9 @@ export class Player {
 }
 
 export class GameInfo {
+
+    public shuffledSongList: SongGuessItem[];
+
     // players - The players in the game
     // gameSong - The song all players have to guess
     // guessList - A list of options for the name of the current song
@@ -28,7 +31,9 @@ export class GameInfo {
         public id: number,
         public players: Player[],
         public gameSong: GameSong,
-        public guessList: SongGuessItem[]) {}
+        public guessList: SongGuessItem[]) {
+            this.shuffledSongList = this.shuffleArray(this.guessList);
+        }
 
     private shuffleArray<T>(array: T[]) {
         for (var i = array.length - 1; i > 0; i--) {
@@ -40,9 +45,4 @@ export class GameInfo {
         return array;
     }
 
-    // Get the full song list to show (the correct answer + the wrong options)
-    // then shuffle the array so the correct answer isn't always first!
-    getShuffledSongList() {
-        return this.shuffleArray(this.guessList);
-    }
 }

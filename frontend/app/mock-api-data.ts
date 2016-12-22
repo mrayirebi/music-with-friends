@@ -7,7 +7,7 @@ var _getCurrentSong = function() {
         new GameSong('https://p.scdn.co/mp3-preview/4f410d4293b502e25df3e782c443d1745382c3da'),
         new GameSong('https://p.scdn.co/mp3-preview/b2ef863a52ba8960d315847c353ab5da1b1874a1')
     ];
-    return demo_songs[Math.floor(Math.random() * demo_songs.length)];
+    return demo_songs[2];
 };
 
 var _getPlayers = function() {
@@ -18,6 +18,8 @@ var _getPlayers = function() {
     ];
     return players;
 }
+
+export const CORRECT_GUESS_ID: string = '1i1fxkWeaMmKEB4T7zqbzK';
 
 export const GAME: GameInfo = new GameInfo(1, _getPlayers(), _getCurrentSong(), [
         new SongGuessItem('3Yf8sVkFXThHDtkqtSNbpZ', "Kukere", "Iyanya"),
