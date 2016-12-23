@@ -1,15 +1,27 @@
-<h1>Play Component</h1>
- <!--TODO Add the list of players in a good UI format with their scores.-->
- <h3>Players:</h3>
- <tr *ngFor="let player of gameInfo.players">
-  <td>{{player.id}} {{player.name}} - Score = {{player.score}}</td>
-</tr>
- <!--TODO Improve UI for choosing the song -->
- <h3>Choose from:</h3>
- <tr *ngFor="let guessItem of gameInfo.getSongList()">
-  <td>{{guessItem.name}} - {{guessItem.artist}}</td>
-</tr>
- <audio autoplay [currentTime]="gameInfo.gameSong.startTime">
-  <source [src]="gameInfo.gameSong.url" type="audio/mpeg">
-  Your browser does not support the audio tag.
-</audio> 
+ <div *ngIf="currentPlayMode == 0">
+  <p id="choose-from">--- pick a choice below ---</p>
+  <ul class="song-choice-list">
+    <li *ngFor="let guessItem of gameInfo.shuffledSongList" (click)="makeGuess(guessItem)">{{guessItem.name}} - {{guessItem.artist}}</li>
+  </ul>
+   <audio autoplay [currentTime]="gameInfo.gameSong.startTime">
+    <source [src]="gameInfo.gameSong.url" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio> 
+ </div>
+<div *ngIf="currentPlayMode == 1">
+  <h1>YOU'RE CORRECT</h1>
+</div>
+<div *ngIf="currentPlayMode == 2">
+  <h1>WRONG GUESS :(</h1>
+</div>
+ <p id="choose-from">--- {{gameInfo.players.length}} players ---</p>
+ <ul class="player-list flexcontainer">
+  <li *ngFor="let player of gameInfo.players">
+    <div>
+      <span class="player-name">{{player.name}}</span>
+      <span>-</span>
+      <span>{{player.score}}</span>
+    </div>
+  </li>
+</ul>
+
